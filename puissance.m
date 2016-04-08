@@ -1,0 +1,19 @@
+function[lambda,v,iter]=puissance(A,q0,tol,nmax)
+qk=q0;
+zk1=A*qk;
+qk1=zk1/norm(zk1);
+vk=0;
+vk1=(qk1)'*A*qk1;
+qk=qk1;
+iter=0;
+while(abs(vk1-vk)>=tol & iter<nmax)
+    zk1=A*qk;
+    qk1=zk1/norm(zk1);
+    vk=vk1;
+    vk1=(qk1)'*A*qk1;
+    qk=qk1;
+    iter=iter+1;
+end
+v=qk1;
+lambda=vk1;
+end

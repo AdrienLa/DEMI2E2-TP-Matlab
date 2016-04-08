@@ -1,0 +1,9 @@
+function[f]=rfibonacci(n)
+if(n==0)
+    f=0;
+elseif(n==1)
+    f=1;
+else
+    f=rfibonacci(n-1)+rfibonacci(n-2);
+end
+end
